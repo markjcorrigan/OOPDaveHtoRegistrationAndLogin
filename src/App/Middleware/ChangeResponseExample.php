@@ -15,7 +15,7 @@ class ChangeResponseExample implements MiddlewareInterface
     {
         $response = $next->handle($request);
 
-        $response->setBody($response->getBody() . " hello from the middleware");
+        $response->setBody($response->getBody() . " hello again from the middleware");
 
         return $response;
     }

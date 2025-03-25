@@ -5,6 +5,7 @@
 {% block body %}
 
 <h1>{{ product["name"] }}</h1>
+<p><a href="/products/index">Back</a></p>
 
 <p>{{ product["description"] }}</p>
 
