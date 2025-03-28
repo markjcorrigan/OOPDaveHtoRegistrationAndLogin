@@ -25,21 +25,26 @@ class Signup extends Controller
 
     public function create(): Response
     {
-        $data = [
+        $password_hash = password_hash($this->request->post["password"], PASSWORD_DEFAULT);
+//        var_dump($password_hash);
+        $users = [
             "name" => $this->request->post["name"],
             "email" => $this->request->post["email"],
-            "password_hash" => $this->request->post["password_hash"],
+            "password_hash" => $password_hash,
         ];
 
-        if ($this->model->insert($data)) {
+        if ($this->model->insert($users)) {
 
-            return $this->redirect("/users/{$this->model->getInsertID()}/show");
+//            return $this->redirect("/signup/{$this->model->getInsertID()}/show");
+            return $this->view("Signup/success.mvc.php", [
+                "title" => "Successful Sign Up"
+            ]);
 
         } else {
 
-            return $this->view("Users/new.mvc.php", [
+            return $this->view("Signup/new.mvc.php", [
                 "errors" => $this->model->getErrors(),
-                "users" => $data
+                "users" => $users
             ]);
 
         }
