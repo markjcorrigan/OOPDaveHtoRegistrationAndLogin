@@ -1,12 +1,15 @@
 <div>
-<!--    <label for="name">Name</label>-->
-<!--    <input type="text" id="name" name="name" value="{{ user['name'] }}" autofocus />-->
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" value="{{ product["name"] }}">
+
+
+<label for="name">Flippin Name</label>
+<input type="text" id="name" name="name" value="{{ user['name'] }}"  placeholder="Name" autofocus />
+
 </div>
 {% if (isset($errors["name"])): %}
 <p>{{ errors["name"] }}</p>
 {% endif; %}
+
+
 <div>
     <label for="inputEmail">Email address</label>
     <input id="inputEmail" name="email" type="email" value="{{ user['email'] }}" placeholder="Email address" />
@@ -27,7 +30,7 @@
     <input type="text" id="inputPasswordConfirmation" name="password_confirmation"
            placeholder="Repeat password" />
 </div>
-{% if (isset($errors["password"])): %}
+{% if (isset($errors["password_confirmation"])): %}
 <p>{{ errors["password_confirmation"] }}</p>
 {% endif; %}
 <br>

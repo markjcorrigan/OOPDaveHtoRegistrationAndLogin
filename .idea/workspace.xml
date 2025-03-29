@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b76ed5ef-8e19-4490-9846-001834bbd044" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Controllers/Signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Controllers/Signups.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Models/Signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Models/Signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Controllers/Signups.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Controllers/Signups.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Models/Signup.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Home/index.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Home/index.mvc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/Signup/form.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Signup/form.mvc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Signup/new.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Signup/new.mvc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Signup/success.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Signup/success.mvc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,27 +33,27 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
     </include_path>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2uxthuqDAHXjD5bVY1hl67iwbXq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -72,6 +70,8 @@
       <option name="presentableId" value="Default" />
       <updated>1743202176211</updated>
       <workItem from="1743202178014" duration="910000" />
+      <workItem from="1743234428688" duration="825000" />
+      <workItem from="1743243615687" duration="10798000" />
     </task>
     <servers />
   </component>

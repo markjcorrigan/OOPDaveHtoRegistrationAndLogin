@@ -71,15 +71,12 @@ class User extends Model
         protected function emailExists($email): bool
     {
         $sql = "SELECT * FROM `user` WHERE email = :email";
-
         $conn = $this->database->getConnection();
-
-        $stmt = $conn->query($sql);
-
+        $stmt = $conn->prepare($sql);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-
         $stmt->execute();
-
         return $stmt->fetch() !== false;
     }
+
+
 }
