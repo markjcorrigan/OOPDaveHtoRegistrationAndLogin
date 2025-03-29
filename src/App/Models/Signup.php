@@ -9,18 +9,20 @@ use PDO;
 
 class Signup extends Model
 {
+//    protected $table = "user";
 
     protected function validate(array $data): void
     {
         if (empty($data["name"])) {
 
-            $this->addError("name", "A User Name is required");
-        }
-//        if (empty($data["email"])) {
-//
-//            $this->addError("email", "An Email is required");
-//        }
+            $this->addError("name", "Name is required");
 
+        }
+
+//        if ($data["password"] != $data["password_confirmation"]) {
+//            $this->addError("password","Password must match confirmation");
+////            $this->errors[] = 'Password must match confirmation';
+//        }
         // email address
         if (filter_var($data["email"], FILTER_VALIDATE_EMAIL) === false) {
             $this->addError("email","Invalid email");
@@ -32,14 +34,14 @@ class Signup extends Model
 //        }
 
         // Password
-        if ($data["password"] != $data["password_confirmation"]) {
-            $this->addError("password","Password must match confirmation");
-//            $this->errors[] = 'Password must match confirmation';
-        }
+//        if ($data["password"] != $data["password_confirmation"]) {
+//            $this->addError("password","Password must match confirmation");
+////            $this->errors[] = 'Password must match confirmation';
+//        }
 
         if (strlen($data["password"]) < 6) {
             $this->addError("password","Please enter at least 6 characters for the password");
-            $this->errors[] = 'Please enter at least 6 characters for the password';
+//            $this->errors[] = 'Please enter at least 6 characters for the password';
         }
 
         if (preg_match('/.*[a-z]+.*/i', $data["password"]) == 0) {
@@ -51,22 +53,7 @@ class Signup extends Model
             $this->addError("password","Password needs at least one number");
 //            $this->errors[] = 'Password needs at least one number';
         }
-
     }
-
-//    protected function emailExists($email): bool
-//    {
-//        $sql = 'SELECT * FROM user WHERE email = :email';
-//
-//        $conn = $this->database->getConnection();
-//
-//        $stmt = $conn->query($sql);
-//        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-//
-//        $stmt->execute();
-//
-//        return $stmt->fetch() !== false;
-//    }
 
     public function getTotal(): int
     {
@@ -81,5 +68,19 @@ class Signup extends Model
 
         return (int) $row["total"];
     }
+
+//    protected function emailExists($email): bool
+//    {
+//        $sql = "SELECT * FROM `user` WHERE email = :email";
+//
+//        $conn = $this->database->getConnection();
+//
+//        $stmt = $conn->query($sql);
+//
+//        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+//
+//        $stmt->execute();
+//
+//        return $stmt->fetch() !== false;
+//    }
 }
- 
