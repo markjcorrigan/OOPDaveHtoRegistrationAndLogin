@@ -8,6 +8,7 @@
 
 <a href="/signups/new">Click here to register</a><br>
 
-<a href="/products/index">Click here for the products section</a>
+<a href="/products/index">Click here for the products section</a><br>
+<a href="/cruds/index">Click here for the cruds section</a>
 
 {% endblock %}

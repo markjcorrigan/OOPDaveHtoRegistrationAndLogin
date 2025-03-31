@@ -83,7 +83,7 @@ DELIMITER ;
 
  */
 
-//            return $this->redirect("/signup/{$this->model->getInsertID()}/show");
+//            return $this->redirect("/users/{$this->model->getInsertID()}/show");
             return $this->view("Signup/success.mvc.php", [
                 "title" => "Successful Sign Up"
             ]);
