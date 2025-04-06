@@ -6,11 +6,12 @@ namespace App\Controllers;
 
 use App\Models;
 use App\Models\User;
+use Exception;
 use Framework\Exceptions\PageNotFoundException;
 use Framework\Controller;
 use Framework\Response;
 
-class Signups extends Controller
+class Signup extends Controller
 {
 
     public function __construct(private User $model)
@@ -26,25 +27,30 @@ class Signups extends Controller
 
     public function create(): Response
     {
-        $password_hash = password_hash($this->request->post["password"], PASSWORD_DEFAULT);
-        $password = password_hash($this->request->post["password"], PASSWORD_DEFAULT);
-        $password_confirmation = password_hash($this->request->post["password_confirmation"], PASSWORD_DEFAULT);
-//        var_dump($password_hash);
-        $data = [
-            "name" => $this->request->post["name"],
-            "email" => $this->request->post["email"],
-            "password_hash" => $password_hash,
-            "password" => $this->request->post["password"],
-            "password_confirmation" => $this->request->post["password_confirmation"],
-        ];
+        try {
+            $password_hash = password_hash($this->request->post["password"], PASSWORD_DEFAULT);
 
+            $data = [
+                "name" => $this->request->post["name"],
+                "email" => $this->request->post["email"],
+                "password_hash" => $password_hash,
+            ];
 
+            if ($this->model->insert($data)) {
+                return $this->view("Signup/success.mvc.php", [
+                    "title" => "Successful Sign Up"
+                ]);
+            } else {
+                return $this->view("Signup/new.mvc.php", [
+                    "errors" => $this->model->getErrors(),
+                    "user" => $data
+                ]);
+            }
+        } catch (Exception $e) {
+            // Handle the exception
+        }
+    }
 
-
-
-//        array_splice($data, 3, 2);
-
-        if ($this->model->insert($data)) {
 
 /*
  * The MariaBD trigger below is in the user table.  It removes the data for password and password_confirmation.
@@ -83,21 +89,6 @@ DELIMITER ;
 
  */
 
-//            return $this->redirect("/users/{$this->model->getInsertID()}/show");
-            return $this->view("Signup/success.mvc.php", [
-                "title" => "Successful Sign Up"
-            ]);
-
-        } else {
-
-            return $this->view("Signup/new.mvc.php", [
-                "errors" => $this->model->getErrors(),
-                "user" => $data,
-
-            ]);
-
-        }
-    }
 
     private function getUser(string $id): array
     {

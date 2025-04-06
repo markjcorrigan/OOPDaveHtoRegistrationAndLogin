@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b76ed5ef-8e19-4490-9846-001834bbd044" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App/Models/Crud.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dave.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dave.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Controllers/Signups.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Controllers/Signups.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/ErrorHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/ErrorHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Controllers/Signups.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Controllers/Signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/Home/index.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Home/index.mvc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Signup/form.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Signup/form.mvc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,19 +41,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "PHPUnit.Products.executor": "Coverage",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;PHPUnit.Products.executor&quot;: &quot;Coverage&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Products" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner directory="$PROJECT_DIR$/views/Products" />
@@ -90,6 +87,7 @@
       <workItem from="1743342331743" duration="7806000" />
       <workItem from="1743422696897" duration="1807000" />
       <workItem from="1743431053985" duration="7010000" />
+      <workItem from="1743924593517" duration="2020000" />
     </task>
     <servers />
   </component>
