@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b76ed5ef-8e19-4490-9846-001834bbd044" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Controllers/Signups.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Controllers/Signup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Home/index.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Home/index.mvc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,12 +84,23 @@
       <workItem from="1743342331743" duration="7806000" />
       <workItem from="1743422696897" duration="1807000" />
       <workItem from="1743431053985" duration="7010000" />
-      <workItem from="1743924593517" duration="2020000" />
+      <workItem from="1743924593517" duration="2433000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/dave@Products.xml" NAME="Products Coverage Results" MODIFIED="1743434618178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

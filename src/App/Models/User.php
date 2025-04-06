@@ -60,10 +60,6 @@ class User extends Model
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
-        return $stmt->fetchColumn();
+        return (int) $stmt->fetchColumn();
     }
-
-
-
-
 }
