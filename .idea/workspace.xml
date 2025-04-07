@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2c14261-34f6-4e24-8049-a15774a65344" name="Changes" comment="Added descriptions for the variables in Login\success.mvc.php" />
+    <list default="true" id="a2c14261-34f6-4e24-8049-a15774a65344" name="Changes" comment="Added descriptions for the variables in Login\success.mvc.php">
+      <change beforePath="$PROJECT_DIR$/src/App/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Models/User.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +70,7 @@
       <updated>1743179561668</updated>
       <workItem from="1743179563323" duration="1268000" />
       <workItem from="1744022373764" duration="16476000" />
+      <workItem from="1744052238461" duration="60000" />
     </task>
     <task id="LOCAL-00001" summary="Got the Login and Register function authenticate to work">
       <option name="closed" value="true" />

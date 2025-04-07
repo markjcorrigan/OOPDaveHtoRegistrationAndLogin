@@ -54,15 +54,15 @@ class User extends Model
         return $row["total"];
     }
 
-    public function emailExists($email): int
-    {
-        $sql = "SELECT * FROM `user` WHERE email = :email";
-        $conn = $this->database->getConnection();
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
-        return (int) $stmt->fetchColumn();
-    }
+//    public function emailExists($email): int
+//    {
+//        $sql = "SELECT * FROM `user` WHERE email = :email";
+//        $conn = $this->database->getConnection();
+//        $stmt = $conn->prepare($sql);
+//        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+//        $stmt->execute();
+//        return (int) $stmt->fetchColumn();
+//    }
 
 /////////////////////////////////NB Below from Login course
     public function emailExists($email): bool
