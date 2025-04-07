@@ -95,6 +95,9 @@ abstract class Model
 
     public function __construct(protected Database $database)
     {
+     // echo $this->getTable();  NB the child model class will call this to show that the parent has worked out the class name.
+     //   echo $this->getTable();  //NB for testing only.  Switch off.
+     //  I.e. in /products or /users this will show as a string at top
     }
 
     public function findAll(): array
@@ -139,6 +142,7 @@ abstract class Model
 
         $sql = "INSERT INTO {$this->getTable()} ($columns)
                 VALUES ($placeholders)";
+    //    exit($sql);  //NB switch on if testing.  This will show if the child model is correctly created.  I.e. products/new  NB must submit form
 
         $conn = $this->database->getConnection();
 
