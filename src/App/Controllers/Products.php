@@ -28,6 +28,7 @@ class Products extends Controller
     public function show(string $id): Response
     {
         $product = $this->getProduct($id);
+      //  var_dump($product);
 
         return $this->view("Products/show.mvc.php", [
             "product" => $product

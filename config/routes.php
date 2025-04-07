@@ -15,6 +15,8 @@ $router->add("/{controller}/{id:\d+}/delete", ["action" => "delete"]);
 $router->add("/{controller}/{id:\d+}/destroy", ["action" => "destroy", "method" => "post"]);
 
 
+$router->add('login', ['controller' => 'Login', 'action' => 'new']);
+$router->add('signup', ['controller' => 'signup', 'action' => 'new']);
 
 $router->add("/home/index", ["controller" => "home", "action" => "index"]);
 $router->add("/products", ["controller" => "products", "action" => "index"]);
