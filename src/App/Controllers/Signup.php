@@ -27,27 +27,24 @@ class Signup extends Controller
 
     public function create(): Response
     {
-        try {
-            $password_hash = password_hash($this->request->post["password"], PASSWORD_DEFAULT);
 
-            $data = [
-                "name" => $this->request->post["name"],
-                "email" => $this->request->post["email"],
-                "password_hash" => $password_hash,
-            ];
+        $password_hash = password_hash($this->request->post["password"], PASSWORD_DEFAULT);
 
-            if ($this->model->insert($data)) {
-                return $this->view("Signup/success.mvc.php", [
-                    "title" => "Successful Sign Up"
-                ]);
-            } else {
-                return $this->view("Signup/new.mvc.php", [
-                    "errors" => $this->model->getErrors(),
-                    "user" => $data
-                ]);
-            }
-        } catch (Exception $e) {
-            // Handle the exception
+        $data = [
+            "name" => $this->request->post["name"],
+            "email" => $this->request->post["email"],
+            "password_hash" => $password_hash,
+        ];
+
+        if ($this->model->insert($data)) {
+            return $this->view("Signup/success.mvc.php", [
+                "title" => "Successful Sign Up"
+            ]);
+        } else {
+            return $this->view("Signup/new.mvc.php", [
+                "errors" => $this->model->getErrors(),
+                "user" => $data
+            ]);
         }
     }
 

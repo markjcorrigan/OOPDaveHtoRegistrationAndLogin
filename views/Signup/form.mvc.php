@@ -2,7 +2,7 @@
 
 
 <label for="name">Flippin Name</label>
-<input type="text" id="name" name="name" value="{{ user['name'] }}"  placeholder="Name" required autofocus />
+<input type="text" id="name" name="name" value="{{ user['name'] }}"  placeholder="Name" required autofocus  />
 
 </div>
 {% if (isset($errors["name"])): %}

@@ -6,7 +6,7 @@
 
 <h1>New User</h1>
 
-<form method="post" action="/signups/create">
+<form method="post" action="/signup/create">
 
     {% include "Signup/form.mvc.php" %}
 
