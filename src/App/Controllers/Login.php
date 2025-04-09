@@ -40,17 +40,23 @@ public function create(): Response
         "email" => $this->request->post["email"],
         "password" => $this->request->post["password"],
     ];
-
+    $test = $this->model->emailExists($data['email']);
     $errors = [];
 
     if (empty($data["email"])) {
         $errors["email"] = "Email is required";
+    } elseif (filter_var($data["email"], FILTER_VALIDATE_EMAIL) === false) {
+        $errors["email"] = "Invalid email";
+    } elseif (!$test) {
+        $errors["email"] = "User not found";
     }
 
     if (empty($data["password"])) {
         $errors["password"] = "Password is required";
     } elseif (strlen($data["password"]) < 6) {
         $errors["password"] = "Please enter at least 6 characters for the password";
+    } elseif (preg_match('/.*\d+.*/i', $data["password"]) == 0) {
+        $errors["password"] = "Password needs at least one number";
     }
 
     if (!empty($errors)) {
@@ -58,7 +64,6 @@ public function create(): Response
     }
 
     $user = $this->model->authenticate($data["email"], $data["password"]);
-    $test = $this->model->emailExists($data['email']);
 
     if ($user) {
         if (password_verify($data["password"], $user->password_hash)) {
@@ -73,9 +78,7 @@ public function create(): Response
             return $this->view("Login/new.mvc.php", ["errors" => $errors, "user" => $data]);
         }
     } else {
-        if (!$test) {
-            $errors["email"] = "User not found";
-        }
+
 
         return $this->view("Login/new.mvc.php", ["errors" => $errors, "user" => $data]);
     }
