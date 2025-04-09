@@ -1,7 +1,7 @@
 <div>
 
 
-<label for="name">Flippin Name</label>
+<label for="name">Name</label>
 <input type="text" id="name" name="name" value="{{ user['name'] }}"  placeholder="Name" required autofocus  />
 
 </div>

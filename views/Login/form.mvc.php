@@ -18,7 +18,6 @@
 <button type="submit">Log in</button>
 
 <script>
-
 let passwordType = 'password';
 document.getElementById('togglePassword').addEventListener('click', function() {
 if (passwordType === 'password') {

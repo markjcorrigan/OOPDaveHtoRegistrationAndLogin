@@ -32,16 +32,55 @@ class Login extends Controller
 
 
 
-
-
 public function create(): Response
 {
     $data = [
         "email" => $this->request->post["email"],
         "password" => $this->request->post["password"],
     ];
-    $test = $this->model->emailExists($data['email']);
+
+    $errors = $this->validate($data);
+
+    if (!empty($errors)) {
+        $data = [
+            "email" => "",
+            "password" => "",
+        ];
+        return $this->view("Login/new.mvc.php", ["errors" => $errors, "user" => $data]);
+    }
+
+    $user = $this->model->authenticate($data["email"], $data["password"]);
+
+    if ($user) {
+        if (password_verify($data["password"], $user->password_hash)) {
+            $userData = [
+                "user" => $data,
+                "userObj" => $this->model->findByEmail($data["email"]),
+            ];
+            return $this->view("Login/success.mvc.php", $userData);
+        } else {
+            $errors["password"] = "Invalid password";
+            $data = [
+                "email" => "",
+                "password" => "",
+            ];
+            return $this->view("Login/new.mvc.php", ["errors" => $errors, "user" => $data]);
+        }
+    } else {
+        $data = [
+            "email" => "",
+            "password" => "",
+        ];
+        return $this->view("Login/new.mvc.php", ["errors" => $errors, "user" => $data]);
+    }
+}
+
+
+
+private function validate(array $data): array
+{
     $errors = [];
+    $test = $this->model->emailExists($data['email']);
 
     if (empty($data["email"])) {
         $errors["email"] = "Email is required";
@@ -59,30 +98,10 @@ public function create(): Response
         $errors["password"] = "Password needs at least one number";
     }
 
-    if (!empty($errors)) {
-        return $this->view("Login/new.mvc.php", ["errors" => $errors, "user" => $data]);
-    }
-
-    $user = $this->model->authenticate($data["email"], $data["password"]);
-
-    if ($user) {
-        if (password_verify($data["password"], $user->password_hash)) {
-            $userData = [
-                "user" => $data,
-                "userObj" => $this->model->findByEmail($data["email"]),
-            ];
-
-            return $this->view("Login/success.mvc.php", $userData);
-        } else {
-            $errors["password"] = "Invalid password";
-            return $this->view("Login/new.mvc.php", ["errors" => $errors, "user" => $data]);
-        }
-    } else {
-
-
-        return $this->view("Login/new.mvc.php", ["errors" => $errors, "user" => $data]);
-    }
+    return $errors;
 }
+
+
 
 
 

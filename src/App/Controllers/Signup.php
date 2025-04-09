@@ -25,28 +25,60 @@ class Signup extends Controller
       ]);
     }
 
-    public function create(): Response
-    {
 
-        $password_hash = password_hash($this->request->post["password"], PASSWORD_DEFAULT);
+public function create(): Response
+{
+    $data = [
+        "name" => $this->request->post["name"],
+        "email" => $this->request->post["email"],
+        "password" => $this->request->post["password"],
+        "password_confirmation" => $this->request->post["password_confirmation"],
+    ];
 
-        $data = [
-            "name" => $this->request->post["name"],
-            "email" => $this->request->post["email"],
-            "password_hash" => $password_hash,
-        ];
+    $errors = $this->validate($data);
 
-        if ($this->model->insert($data)) {
-            return $this->view("Signup/success.mvc.php", [
-                "title" => "Successful Sign Up"
-            ]);
-        } else {
-            return $this->view("Signup/new.mvc.php", [
-                "errors" => $this->model->getErrors(),
-                "user" => $data
-            ]);
-        }
+    if (!empty($errors)) {
+        return $this->view("Signup/new.mvc.php", ["errors" => $errors, "user" => $data]);
     }
+
+    $password_hash = password_hash($data["password"], PASSWORD_DEFAULT);
+    $data["password_hash"] = $password_hash;
+
+    if ($this->model->insert($data)) {
+        return $this->view("Signup/success.mvc.php", ["title" => "Successful Sign Up"]);
+    } else {
+        return $this->view("Signup/new.mvc.php", ["errors" => $errors, "user" => $data]);
+    }
+}
+
+private function validate(array $data): array
+{
+    $errors = [];
+
+    if (empty($data["name"])) {
+        $errors["name"] = "User Name is required";
+    }
+
+    if (empty($data["email"])) {
+        $errors["email"] = "Email is required";
+    } elseif (filter_var($data["email"], FILTER_VALIDATE_EMAIL) === false) {
+        $errors["email"] = "Invalid email";
+    }
+
+    if (empty($data["password"])) {
+        $errors["password"] = "Password is required";
+    } elseif (strlen($data["password"]) < 6) {
+        $errors["password"] = "Please enter at least 6 characters for the password";
+    } elseif (preg_match('/.*\d+.*/i', $data["password"]) == 0) {
+        $errors["password"] = "Password needs at least one number";
+    } elseif ($data["password"] != $data["password_confirmation"]) {
+        $errors["password"] = "Password must match confirmation";
+    }
+
+    return $errors;
+}
+
+
 
 
 /*
