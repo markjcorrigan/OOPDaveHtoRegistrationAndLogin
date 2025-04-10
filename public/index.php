@@ -18,6 +18,8 @@ set_error_handler("Framework\ErrorHandler::handleError");
 
 set_exception_handler("Framework\ErrorHandler::handleException");
 
+session_start();
+
 $router = require ROOT_PATH . "/config/routes.php";
 
 $container = require ROOT_PATH . "/config/services.php";

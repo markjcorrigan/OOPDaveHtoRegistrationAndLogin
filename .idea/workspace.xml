@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bd408de-1584-422e-8d23-210adb8ae57b" name="Changes" comment="Finally fixed the error handling in the login controller">
+    <list default="true" id="0bd408de-1584-422e-8d23-210adb8ae57b" name="Changes" comment="Worked on putting a separate errors area in the controllers for login and setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/Controllers/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Controllers/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Controllers/Signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Controllers/Signup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/Login/form.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Login/form.mvc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Login/new.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Login/new.mvc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Signup/form.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Signup/form.mvc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Signup/new.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Signup/new.mvc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Users/form.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Users/form.mvc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Login/success.mvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Login/success.mvc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +69,10 @@
       <option name="presentableId" value="Default" />
       <updated>1744148860928</updated>
       <workItem from="1744148862898" duration="403000" />
-      <workItem from="1744206502010" duration="5691000" />
+      <workItem from="1744206502010" duration="12602000" />
+      <workItem from="1744221687530" duration="852000" />
+      <workItem from="1744226382804" duration="4751000" />
+      <workItem from="1744271472947" duration="146000" />
     </task>
     <task id="LOCAL-00001" summary="Finally fixed the error handling in the login controller">
       <option name="closed" value="true" />
@@ -90,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744207519095</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Worked on putting a separate errors area in the controllers for login and setup">
+      <option name="closed" value="true" />
+      <created>1744213346595</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744213346595</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finally fixed the error handling in the login controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finally fixed the error handling in the login controller" />
+    <MESSAGE value="Worked on putting a separate errors area in the controllers for login and setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on putting a separate errors area in the controllers for login and setup" />
   </component>
 </project>

@@ -53,11 +53,16 @@ public function create(): Response
 
     if ($user) {
         if (password_verify($data["password"], $user->password_hash)) {
+
+
+            $_SESSION['user_id'] = $user->id;
             $userData = [
                 "user" => $data,
                 "userObj" => $this->model->findByEmail($data["email"]),
+                "session" => $_SESSION['user_id']
             ];
             return $this->view("Login/success.mvc.php", $userData);
+
         } else {
             $errors["password"] = "Invalid password";
             $data = [
