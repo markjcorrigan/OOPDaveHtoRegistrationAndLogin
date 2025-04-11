@@ -38,8 +38,8 @@ class Flash
      *
      * @return void
      */
-    public static function addMessage(string $message): void
-//    public static function addMessage(string $message, string $type = 'success'): void
+//    public static function addMessage(string $message): void
+    public static function addMessage(string $message, string $type = 'success'): void
     {
         // Create array in the session if it doesn't already exist
         if (! isset($_SESSION['flash_notifications'])) {
@@ -49,7 +49,7 @@ class Flash
         // Append the message to the array
         //$_SESSION['flash_notifications'][] = $message;
 
-        $type = '';
+//        $type = '';
         $_SESSION['flash_notifications'][] = [
             'body' => $message,
             'type' => $type

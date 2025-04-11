@@ -56,14 +56,19 @@ public function create(): Response
     if ($user) {
         if (password_verify($data["password"], $user->password_hash)) {
 
-            Flash::addMessage('Login was successful');
+//            Flash::addMessage('Login was successful');
+            Flash::addMessage('Login was successful', Flash::WARNING);
+            $messages = Flash::getMessages();
+//            var_dump($messages);
             $_SESSION['user_id'] = $user->id;
             $userData = [
                 "user" => $data,
                 "userObj" => $this->model->findByEmail($data["email"]),
                 "session" => $_SESSION['user_id'],
+                "messages" => $messages
 //                "flash_notifications" => $_SESSION['flash_notifications']
             ];
+
 //            var_dump($_SESSION['flash_notifications']);
 //            Flash::addMessage('Login was successful', Flash::SUCCESS);
   

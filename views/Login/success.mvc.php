@@ -5,6 +5,7 @@
 
 
 <?php
+/*
 $messages = array_unique($_SESSION['flash_notifications']);
 foreach ($messages as $message): ?>
     <?php if (is_array($message)): ?>
@@ -17,10 +18,20 @@ foreach ($messages as $message): ?>
     <?php endif; ?>
 <?php endforeach; ?>
 <?php unset($_SESSION['flash_notifications']); ?>
+<?php */ ?>
+
+<?php /*
+{% foreach ($messages as $message): %}
+<h2>
+    {{ message }}
+</h2>
+{% endforeach; %}
+*/ ?>
 
 
-
-
+{% (for message in messages): %}
+<div style="text-align:center" class="alert alert-{{ message.type }}"> {{ message.body }} </div>
+{% endfor; %}
 
 
 

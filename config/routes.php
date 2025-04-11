@@ -2,6 +2,8 @@
 
 $router = new Framework\Router;
 
+$router->add("/twig", ["controller" => "home", "action" => "twig"]);
+
 $router->add("/admin/{controller}/{action}", ["namespace" => "Admin"]);
 $router->add("/{title}/{id:\d+}/{page:\d+}", ["controller" => "products", "action" => "showPage"]);
 $router->add("/product/{slug:[\w-]+}", ["controller" => "products", "action" => "show"]);

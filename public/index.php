@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 define("ROOT_PATH", dirname(__DIR__));
 
+require dirname(__DIR__) . '/vendor/autoload.php';
+
 spl_autoload_register(function (string $class_name) {
 
     require ROOT_PATH . "/src/" . str_replace("\\", "/", $class_name) . ".php";
