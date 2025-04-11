@@ -7,6 +7,9 @@
 </head>
 <body>
 
+
+
+
 {% yield body %}
 
 </body>
