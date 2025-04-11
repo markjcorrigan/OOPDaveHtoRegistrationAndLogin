@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+
+{% block title %}Log in{% endblock %}
+
+{% block body %}
+<div class="container col-md-5 mx-auto sticky-footer-wrapper" align="center" > 
+  <!--<main class="flex-fill">  --> 
+  <br>
+  <br>
+  <form class="container" action="/login/create" method="post">
+    <h3 class="form-signin-heading" style="text-align:left"><font color="navy"> Please Sign in</font></h3>
+    <div class="form-group">
+      <p style="text-align:left">
+        <label for="inputEmail"><font color="navy">Email address</font></label>
+        <input type="email" id="inputEmail" name="email" placeholder="Email address" autofocus value="{{ email }}" class="form-control" >
+      </p>
+    </div>
+    <div class="form-group">
+      <p style="text-align:left">
+        <label for="inputPassword"><font color="navy">Password</font></label>
+        <input type="password" id="inputPassword" name="password" placeholder="Password" class="form-control" >
+      </p>
+    </div>
+    <div class="checkbox">
+      <p style="text-align:left">
+        <label>
+          <input type="checkbox" name="remember_me" {% if remember_me %} checked="checked"{% endif %} >
+          <font color="navy" >Remember me</font> </label>
+      </p>
+    </div>
+    <p style="text-align:left"><font color="navy">
+      <button type="submit" class="btn btn-primary">Log in</button>
+      </font></p>
+    <p style="text-align:left"><font color="navy"><a href="/password/forgot"><font color="navy">Forgot password?</font></a></font></p>
+    <h5 style="text-align:right"> <a href="/register"><font color="navy">Sign Up?</font></a></h5>
+  </form>
+  <br>
+</div>
+{% endblock %} 

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+    <h1>Welcome</h1>
+
+{% for message in messages %}
+{% if message is iterable %}
+{% for value in message %}
+<p>{{ value }}</p>
+{% endfor %}
+{% else %}
+<p>{{ message }}</p>
+{% endif %}
+{% endfor %}
+
+
+        <a href="/signup/new">Sign up</a> or <a href="/login">log in</a>.
+
+
+{% endblock %}
